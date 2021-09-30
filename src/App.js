@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Container, Row } from "react-bootstrap";
 import DashboardUrl from "./components/DashboardUrl";
-import Login from "./components/Login";
+import LoginForm from "./components/LoginForm";
 
 const App = () => {
   const [fileUrl, setFileUrl] = useState("");
@@ -12,9 +12,10 @@ const App = () => {
         className="d-flex flex-column justify-content-center"
         style={{ height: "100%" }}
       >
-        <Login setFileUrl={setFileUrl} />
+        <h1>Login Page</h1>
+        <LoginForm setFileUrl={setFileUrl} />
         <Row className="py-5 mt-4"></Row>
-        <DashboardUrl fileUrl={fileUrl} />
+        { fileUrl && <DashboardUrl fileUrl={fileUrl} /> }
       </Container>
     </main>
   );
