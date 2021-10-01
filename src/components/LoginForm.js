@@ -13,6 +13,7 @@ const LoginForm = ({ setFileUrl }) => {
   const submitHandler = (e) => {
     e.preventDefault();
     setDisabled(true);
+    setFileUrl("");
     axios
       .post(`${HOST}/getDashboard`, {
         username: username,
@@ -29,6 +30,9 @@ const LoginForm = ({ setFileUrl }) => {
       })
       .finally(() => {
         setDisabled(false);
+        setUserName("");
+        setPassword("");
+        setDashboardUrl("");
       });
   };
 
