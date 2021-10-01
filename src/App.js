@@ -15,7 +15,7 @@ const App = () => {
         <h1>Login Page</h1>
         <LoginForm setFileUrl={setFileUrl} />
         <Row className="py-5 mt-4"></Row>
-        { fileUrl && <DashboardUrl fileUrl={fileUrl} /> }
+        {fileUrl && <DashboardUrl fileUrl={fileUrl} />}
       </Container>
     </main>
   );
