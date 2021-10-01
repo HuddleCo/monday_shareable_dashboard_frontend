@@ -12,22 +12,14 @@ const LoginForm = ({ setFileUrl }) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
+
     setDisabled(true);
     setFileUrl("");
+
     axios
-      .post(`${HOST}/getDashboard`, {
-        username: username,
-        password: password,
-        dashboardUrl: dashboardUrl,
-      })
-      .then((res) => {
-        if (res.data.url) {
-          setFileUrl(res.data.url);
-        }
-      })
-      .catch((error) => {
-        alert(error.message);
-      })
+      .post(`${HOST}/getDashboard`, { username, password, dashboardUrl })
+      .then((res) => res.data.path && setFileUrl(`${HOST}${res.data.path}`))
+      .catch((error) => alert(error.message))
       .finally(() => {
         setDisabled(false);
         setUserName("");
@@ -68,15 +60,13 @@ const LoginForm = ({ setFileUrl }) => {
         ></Form.Control>
       </Form.Group>
 
-      {disabled ? (
-        <Spinner animation="border" role="status">
-          <span className="visually-hidden">Loading...</span>
-        </Spinner>
-      ) : (
-        <Button className="my-2" type="submit" variant="primary">
-          Sign In
-        </Button>
-      )}
+      <Button className="my-2" type="submit" variant="primary" disabled={disabled}>
+        {disabled ? (
+          <Spinner animation="border" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </Spinner>
+        ) : "Sign In"}
+      </Button>
     </Form>
   );
 };
