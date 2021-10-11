@@ -1,0 +1,8 @@
+version: "3.5"
+services:
+  app:
+    image: aussidavid/monday_shareable_dashboard_frontend
+    build: .
+    ports:
+      - 5000:5000
+    env_file: .env
