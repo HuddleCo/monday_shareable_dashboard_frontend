@@ -91,6 +91,7 @@ $ docker-compose build
 To deploy the app run:
 
 ```bash
+$ ssh $HOST docker pull aussidavid/monday_shareable_dashboard_frontend:latest
 $ cat docker-compose.prod.yml | ssh $HOST docker stack deploy --prune -c - shareable_dashboard_frontend
 
 Updating service shareable_dashboard_frontend_app (id: mrsisw1f22eh3ty4og8auvd3d)
