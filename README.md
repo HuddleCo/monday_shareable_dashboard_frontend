@@ -88,10 +88,10 @@ $ docker-compose build
 
 ### Deploying the Docker image
 
-To deploy the the app run:
+To deploy the app run:
 
 ```bash
-$ cat docker-compose.prod.yml | ssh $HOST stack deploy --prune -c - shareable_dashboard_frontend
+$ cat docker-compose.prod.yml | ssh $HOST docker stack deploy --prune -c - shareable_dashboard_frontend
 
 Updating service shareable_dashboard_frontend_app (id: mrsisw1f22eh3ty4og8auvd3d)
 ```
