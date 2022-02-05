@@ -4,5 +4,5 @@ services:
     image: aussidavid/monday_shareable_dashboard_frontend
     build: .
     ports:
-      - 5000:5000
+      - 3000:3000
     env_file: .env
