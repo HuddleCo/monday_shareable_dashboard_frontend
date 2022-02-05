@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Form, Button, Spinner } from "react-bootstrap";
 import axios from "axios";
 
-const HOST = 'https://backend.shareable-dashboard.poweredbyhuddle.com.au';
+const HOST = process.env.REACT_APP_BACKEND_HOST;
 
 const LoginForm = ({ setFileUrl }) => {
   const [username, setUserName] = useState("");
