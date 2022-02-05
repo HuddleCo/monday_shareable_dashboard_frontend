@@ -1,4 +1,4 @@
-FROM node:14-alpine as build
+FROM node:16-alpine as build
 
 ENV PATH /app/node_modules/.bin:$PATH
 
@@ -14,7 +14,7 @@ COPY . ./
 
 RUN npm run build
 
-FROM node:14-alpine
+FROM node:16-alpine
 
 RUN npm install -g serve
 
