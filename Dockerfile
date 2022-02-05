@@ -4,7 +4,7 @@ ENV PATH /app/node_modules/.bin:$PATH
 
 WORKDIR /app
 
-RUN npm install -g react-scripts@3.4.1
+RUN npm install -g react-scripts@4.0.3
 
 COPY package*.json ./
 
