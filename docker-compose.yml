@@ -2,7 +2,9 @@ version: "3.5"
 services:
   app:
     image: aussidavid/monday_shareable_dashboard_frontend
-    build: .
+    build:
+      context: .
+      args:
+        - REACT_APP_BACKEND_HOST=https://backend.shareable-dashboard.poweredbyhuddle.com.au
     ports:
       - 3000:3000
-    env_file: .env

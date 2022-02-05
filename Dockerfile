@@ -1,5 +1,6 @@
 FROM node:16-alpine as build
 
+ARG REACT_APP_BACKEND_HOST
 ENV PATH /app/node_modules/.bin:$PATH
 
 WORKDIR /app
