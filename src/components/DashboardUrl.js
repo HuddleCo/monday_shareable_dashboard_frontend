@@ -4,7 +4,7 @@ import { Button, Row, Col } from "react-bootstrap";
 
 const DashboardUrl = ({ fileUrl }) => {
   return (
-    <>
+    <div>
       <h3>Share this dashboard link with your client!</h3>
       <br /> <br />
       <Row>
@@ -31,7 +31,7 @@ const DashboardUrl = ({ fileUrl }) => {
         textColor="white"
         effect="float"
       />
-    </>
+    </div>
   );
 };
 
